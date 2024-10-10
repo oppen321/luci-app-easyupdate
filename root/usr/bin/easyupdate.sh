@@ -48,7 +48,7 @@ function downCloudVer() {
 	fi
 	writeLog "Whether EFI firmware is available(是否EFI固件):$suffix"
 	writeLog 'Get the cloud firmware link(获取云端固件链接)'
-	url=$(curl "https://api.github.com/repos/${github[2]}/${github[3]}/releases/latest" | jsonfilter -e '@.assets[*].browser_download_url' | sed -n "/$suffix/p")
+	url=$(curl "https://api.github.com/repos/oppen321/Lede-update/releases/latest" | jsonfilter -e '@.assets[*].browser_download_url' | sed -n "/$suffix/p")
 	writeLog "Cloud firmware link(云端固件链接):$url"
 	mirror=$(uci get easyupdate.main.mirror)
 	writeLog "Use mirror URL(使用镜像网站):$mirror"
