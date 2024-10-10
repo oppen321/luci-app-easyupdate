@@ -31,7 +31,7 @@ function getCloudVer() {
 	checkEnv
 	github=$(uci get easyupdate.main.github)
 	github=(${github//// })
-	curl "https://api.github.com/repos/${github[2]}/${github[3]}/releases/latest" | jsonfilter -e '@.tag_name' | sed -e 's/OpenWrt_//'
+	curl "https://api.github.com/repos/oppen321/Lede-update/releases/latest" | jsonfilter -e '@.tag_name' | sed -e 's/OpenWrt_//'
 }
 
 function downCloudVer() {
